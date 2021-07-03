@@ -7,7 +7,7 @@ import { ReceptionComponent } from './reception/reception.component';
 const routes: Routes = [
 
   {path: '', component: AuthComponent},
-  {path: 'reception/:role', component: ReceptionComponent},
+  {path: 'reception', component: ReceptionComponent},
   
 ];
 

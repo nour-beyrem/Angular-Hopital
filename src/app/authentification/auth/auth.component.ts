@@ -61,7 +61,7 @@ export class AuthComponent implements OnInit {
       }
     );
    if(data.user.role=="reception" ){
-    this.router.navigate(['reception',data.user.role]);}
+    this.router.navigate(['reception']);}
   //}else{
   //  this.router.navigate(['login/livreur', data.user.role]);
  // }
