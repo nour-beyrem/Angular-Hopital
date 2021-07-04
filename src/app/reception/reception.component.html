@@ -62,7 +62,10 @@
                   <th>{{patient.origine}}</th>
                   <th>{{patient.statutSociale}}</th>
                   <th>{{patient.servicesAdmission}}</th>
-          
+                  <th>
+                    <button   type="button" class="btn btn-outline-secondary" [routerLink]="['/updateReception',patient.id]"> update</button>
+                    <button type="button" class="btn btn-outline-secondary" (click)="deletePatient(patient.id)"> delete</button>
+                </th>
                  
               </tr>
           </table>
@@ -88,39 +91,69 @@
               <form #monFormulaire="ngForm">
                   <div class="form-row">
                       <div class="col-md-6">
-                        <h4 class="text-uppercase section-heading">votre coordonnée</h4>
+                        <h4 class="text-uppercase section-heading"> coordonnée</h4>
     
                           <div class="form-group">
-                            <input ngModel class="form-control" type="text" id="nom"  name="nom" placeholder="votre nom *" required /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                            <input ngModel class="form-control" type="text" id="nom"  name="nom" placeholder="nom  patient*" required [(ngModel)]="patientAdd.nom" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
                             <div class="form-group">
-                            <input ngModel class="form-control" type="text" id="prenom" name="prenom"  placeholder="votre prenom *" required /><small class="form-text text-danger help-block lead"></small></div>
+                            <input ngModel class="form-control" type="text" id="prenom" name="prenom"  placeholder="prenom patient*"  required [(ngModel)]="patientAdd.prenom" /><small class="form-text text-danger help-block lead"></small></div>
                             <div class="form-group">
-                              <input ngModel class="form-control" type="email" id="email" name="email"  placeholder="votre email *" required /><small class="form-text text-danger help-block lead"></small></div>
+                              <input ngModel class="form-control" type="text" id="origine" name="origine"  placeholder="origine patient *" required [(ngModel)]="patientAdd.origine" /><small class="form-text text-danger help-block lead"></small></div>
                               <div class="form-group">
-                                <input ngModel class="form-control" type="text" id="adresse" name="adresse"  placeholder="votre adresse  *" required /><small class="form-text text-danger help-block lead"></small></div>
-                      </div>
+                                <input ngModel class="form-control" type="text" id="profession" name="profession"  placeholder="profession patient  *" required [(ngModel)]="patientAdd.profession" /><small class="form-text text-danger help-block lead"></small></div>
+                                <div class="form-group">
+                                  <input ngModel class="form-control" type="text" id="age" name="age"  placeholder="age patient  *" required [(ngModel)]="patientAdd.age" /><small class="form-text text-danger help-block lead"></small></div>
+                                  <div class="form-group">
+                                    <input ngModel class="form-control" type="text" id="statutSociale" name="statutSociale"  placeholder="statut Sociale patient  *" required [(ngModel)]="patientAdd.statutSociale" /><small class="form-text text-danger help-block lead"></small></div>
+                                    <div class="form-group">
+                                      <input ngModel class="form-control" type="text" id="systemeDeSoin" name="systemeDeSoin"  placeholder="systeme De Soin  *" required [(ngModel)]="patientAdd.systemeDeSoin" /><small class="form-text text-danger help-block lead"></small></div>
+                            
+                      
+                              </div>
     
                       <div class="col-md-6">
-                        <h4 class="text-uppercase section-heading">produit a commander</h4>
+                        <h4 class="text-uppercase section-heading">cordonnée medicaux</h4>
     
+                        <div class="form-group">
+                          <input ngModel class="form-control" type="text" id="motifConsultation" name="motifConsultation"  placeholder="motif Consultation  *" required [(ngModel)]="patientAdd.motifConsultation" /><small class="form-text text-danger help-block lead"></small></div>
+                
                           <div class="form-group">
-                            <input ngModel class="form-control" type="text" name="produitCodeBar"   [disabled]="true"  id="produitCodeBar" required/><small class="form-text text-danger help-block lead"></small></div>
-                          <div class="form-group"><input ngModel class="form-control" type="text" name="nomproduit"  [disabled]="true"  id="nomproduit" placeholder="nom"/><small class="form-text text-danger help-block lead"></small></div>
-                          <div class="form-group"><input ngModel class="form-control" type="text" name="couleur" [disabled]="true"  id="couleur" placeholder="couleur *" /><small class="form-text text-danger help-block lead"></small></div>
-                          <div class="form-group"><input #quantite class="form-control" type="text" name="quantiteProduit"   placeholder="quantite *"/>
-                            
-                            <small class="form-text text-danger help-block lead"></small></div>
+                            <input ngModel class="form-control" type="text" id="signesActuels" name="signesActuels"  placeholder="signes Actuels  *" required [(ngModel)]="patientAdd.signesActuels" /><small class="form-text text-danger help-block lead"></small></div>
+                  
+                            <div class="form-group">
+                              <input ngModel class="form-control" type="text" id="natureUrgence" name="natureUrgence"  placeholder="nature Urgence  *" required [(ngModel)]="patientAdd.natureUrgence" /><small class="form-text text-danger help-block lead"></small></div>
+                    
+                              <div class="form-group">
+                                <input ngModel class="form-control" type="text" id="servicesAdmission" name="servicesAdmission"  placeholder="services Admission  *" required [(ngModel)]="patientAdd.servicesAdmission" /><small class="form-text text-danger help-block lead"></small></div>
+                  
+                                
+                          <div class="form-group">
+                            <select ngModel class="form-control" name="medecin" required [(ngModel)]="patientAdd.medecin" id="medecin" >
+                              <option *ngFor="let medecin of medecins" >{{medecin.username}}</option>
+                            </select>
+                           <small class="form-text text-danger help-block lead"></small></div>
+                           <div class="form-group">
+                            <select ngModel class="form-control" name="infirmier" required [(ngModel)]="patientAdd.infirmier" id="infirmier" >
+                              <option *ngFor="let infirmier of infirmiers" >{{infirmier.username}}</option>
+                            </select>
+                           <small class="form-text text-danger help-block lead"></small></div>
+
+
                           </div>
+
+
+
                       <div class="clearfix"></div>
                       <div class="col-lg-12 text-center">
                           <div id="success"></div>
                           <button
                           
-                          [disabled]="!monFormulaire.valid "
-                           class="btn btn-info btn-xl text-uppercase" type="submit">envoyer</button>
+                          
+                          (click)="createPatient()"
+                           class="btn btn-info btn-xl text-uppercase" type="submit">Ajouter</button>
                            <button
-                            [routerLink]="['']"
-                           class="btn btn-info btn-xl text-uppercase" type="submit">retour</button>
+                           (click)="Annuler()"
+                           class="btn btn-info btn-xl text-uppercase" type="submit">Annuler</button>
                       </div>
                     </div>
               </form>

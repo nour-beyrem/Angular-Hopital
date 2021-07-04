@@ -1,4 +1,6 @@
-export class USER {
+import { USER } from "./user";
+
+export class PATIENT {
 
     
     id: string="";
@@ -92,6 +94,9 @@ export class USER {
 
     
     traitementAdministree: string="";
+
+    medecin: USER | undefined ;
+    infirmier: USER | undefined ;
 
   
     

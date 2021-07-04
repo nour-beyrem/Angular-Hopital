@@ -1,3 +1,4 @@
+import { PATIENT } from "./patient";
 
 
 export class USER {
@@ -26,6 +27,10 @@ export class USER {
 
 
     salt: string="";
+
+    patientMed: PATIENT[] | undefined; 
+    patientInf: PATIENT[] | undefined; 
+
 
     
 

@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { AuthComponent } from './authentification/auth/auth.component';
 import { JwtInterceptor } from './authentification/jwt.interceptor';
 import { ReceptionComponent } from './reception/reception.component';
+import { UpdatePComponent } from './reception/update-p/update-p.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { ReceptionComponent } from './reception/reception.component';
     AppComponent,
     AuthComponent,
     ReceptionComponent,
+    UpdatePComponent,
 
   ],
   imports: [
