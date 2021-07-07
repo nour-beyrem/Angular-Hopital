@@ -60,11 +60,18 @@ export class AuthComponent implements OnInit {
         positionClass: 'toast-bottom-left'
       }
     );
+    
    if(data.user.role=="reception" ){
     this.router.navigate(['reception']);}
-  //}else{
-  //  this.router.navigate(['login/livreur', data.user.role]);
- // }
+   else if(data.user.role=="medecin" ){
+      this.router.navigate(['medecin']);}
+    else if(data.user.role=="infirmier" ){
+        this.router.navigate(['infirmier']);}
+    else if(data.user.role=="radiologue" ){
+          this.router.navigate(['radiologue']);}
+     else if(data.user.role=="biologiste" ){
+            this.router.navigate(['biologiste']);}
+  
   }
 
 }

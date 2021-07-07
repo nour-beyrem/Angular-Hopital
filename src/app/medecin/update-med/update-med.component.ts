@@ -3,14 +3,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { UserAuthService } from 'src/app/authentification/user.service';
 import { USER } from 'src/app/model/user';
-import { ReceptionService } from '../reception.service';
+import { ReceptionService } from 'src/app/reception/reception.service';
 
 @Component({
-  selector: 'app-update-p',
-  templateUrl: './update-p.component.html',
-  styleUrls: ['./update-p.component.css']
+  selector: 'app-update-med',
+  templateUrl: './update-med.component.html',
+  styleUrls: ['./update-med.component.css']
 })
-export class UpdatePComponent implements OnInit {
+export class UpdateMedComponent implements OnInit {
 
  
   med:string="medecin"
@@ -22,7 +22,7 @@ export class UpdatePComponent implements OnInit {
 
   ngOnInit(): void {
    
-    
+   
     this.activatedRoute.params.subscribe(
       (params) => {
         this.id=params.id;
@@ -53,7 +53,7 @@ export class UpdatePComponent implements OnInit {
         this.toaster.success(
           `patient a été modifier avec succès`
         );
-        this.router.navigate(['reception']);
+        this.router.navigate(['medecin']);
       },
       (erreur) => {
         console.log(erreur);
@@ -66,6 +66,7 @@ export class UpdatePComponent implements OnInit {
 
   }
   Annuler(){
-    this.router.navigate(['reception']);
+    this.router.navigate(['medecin']);
   }
+
 }

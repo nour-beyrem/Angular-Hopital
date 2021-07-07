@@ -1,0 +1,56 @@
+<div style="background-image:url('../../../assets/image/radio.jpg');background-size: cover;
+background-repeat: no-repeat;">
+    <div class="container" >
+      <div class="row">
+          <div class="col-lg-12 text-center">
+              <h2 class="text-uppercase section-heading">details du patient </h2>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-lg-12">
+            <form #monFormulaire="ngForm">
+                <div class="form-row">
+                    
+  
+                    <div class="col-md-6">
+                      <h4 class="text-uppercase section-heading">Radio</h4>
+  
+                      <div class="form-group">
+                        <input ngModel class="form-control" type="text" id="nom"  name="nom" placeholder="nom  patient*" required [(ngModel)]="patientAdd.nom" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                        <div class="form-group">
+                        <input ngModel class="form-control" type="text" id="prenom" name="prenom"  placeholder="prenom patient*"  required [(ngModel)]="patientAdd.prenom" /><small class="form-text text-danger help-block lead"></small></div>
+                        
+                            <div class="form-group">
+                              <input ngModel class="form-control" type="text" id="servicesAdmission" name="servicesAdmission"  placeholder="services Admission  *" required [(ngModel)]="patientAdd.servicesAdmission" /><small class="form-text text-danger help-block lead"></small></div>
+                
+                              <div class="form-group">
+                                <input ngModel class="form-control" type="text" id="medecin" name="medecin"  [disabled]="true" placeholder="medecin  *" required [(ngModel)]="patientAdd.medecin.username" /><small class="form-text text-danger help-block lead"></small></div>
+                             <div class="form-group">
+                                    <input ngModel class="form-control" type="text" id="bilan" name="bilan"  placeholder="bilan  *"  [disabled]="true" required [(ngModel)]="patientAdd.bilan" /><small class="form-text text-danger help-block lead"></small></div>
+                          
+                               <div class="form-group">
+                                      <input ngModel class="form-control" type="text" id="resultatBilan" name="resultatBilan"  placeholder="resultatBilan  " required [(ngModel)]="patientAdd.resultatBilan" /><small class="form-text text-danger help-block lead"></small></div>
+                          
+
+                        </div>
+
+
+                    <div class="clearfix"></div>
+                    <div class="col-lg-12 text-center">
+                        <div id="success"></div>
+                        <button
+                        
+                        (click)="processForm()"
+                        
+                         class="btn btn-info btn-xl text-uppercase" type="submit">Modifier</button>
+                         <button
+                         (click)="Annuler()"
+                         class="btn btn-info btn-xl text-uppercase" type="submit">Annuler</button>
+                    </div>
+                  </div>
+            </form>
+          </div>
+      </div>
+    </div>
+    </div>
+             

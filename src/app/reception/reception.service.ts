@@ -35,7 +35,15 @@ export class ReceptionService {
   deletePatient(id: any): Observable<any> {
     return this.httpClient.delete(`${this.patienturl}/${id}`);
   }
+
   searchById(id: any): Observable<any> {
     return this.httpClient.get(`${this.patienturl}?name=${id}`);
   }
+
+  getbyMed(): Observable<any> {
+    return this.httpClient.get(this.patienturl+"/medecin")}
+
+  getbyInf  (): Observable<any> {
+      return this.httpClient.get(this.patienturl+"/infirmier")}
+      
 }

@@ -1,0 +1,80 @@
+<nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-info" id="mainNav">
+    <div class="container"><img src="assets/image/logo.png" alt="" class="navbar-brand" width="100"><button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto text-uppercase">
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/medecin#patient">Mes Patients</a></li>
+                <li class="nav-item"></li>
+                
+                <li class="nav-item">
+                  <a
+                    *ngIf="authService.isAuthenticated()"
+                    class="nav-link"
+                    routerLinkActive="active text-primary"
+                    (click)="logout()"
+                  >
+                    <b> Logout</b> 
+                  </a>
+                </li>
+                <li class="nav-item"></li>
+            </ul>
+        </div>
+    </div>
+  </nav>
+  <header class="masthead" style="background-image:url('assets/image/med5.jpg');">
+    
+    <div class="container">
+        <div class="intro-text">
+          
+            <div class="intro-lead-in"><span>Bienvenu {{username}}</span></div>
+     </div>
+    </div>
+  </header>
+   
+  
+  
+  <section class="bg-light" id="patient"> 
+    <div style="background-color: bg-info"  >
+      <div class="container" >
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="text-uppercase section-heading">Patient</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+              <table class="table" id='patients' >
+                <thead class="thead-light">
+                    <tr class="bg-light">
+                        <th>nom</th>
+                        <th>prenom</th>
+                        <th>service admission</th>
+                        <th>Etat D'Urgence</th>
+                        <th>Infirmier</th>
+                        <th> Activités </th>
+                        
+                     
+                    </tr>
+                </thead>
+                <tr *ngFor="let patient of patients ">
+                    <th>{{patient.nom}}</th>
+                    <th>{{patient.prenom}}</th>
+                    <th>{{patient.servicesAdmission}}</th>
+                    <th>{{patient.natureUrgence}}</th>
+                    <th>{{patient.infirmier.prenom }} {{patient.infirmier.nom}}</th>
+                    <th>
+                      <button type="button" class="btn btn-outline-secondary" (click)="deletePatient(patient.id)"> delete</button>
+                  </th>
+                   
+                </tr>
+            </table>
+      
+            </div>
+        </div>
+      </div>
+      </div>
+      
+    
+  </section>
+  
+ 
+  

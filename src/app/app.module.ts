@@ -10,6 +10,14 @@ import { AuthComponent } from './authentification/auth/auth.component';
 import { JwtInterceptor } from './authentification/jwt.interceptor';
 import { ReceptionComponent } from './reception/reception.component';
 import { UpdatePComponent } from './reception/update-p/update-p.component';
+import { MedecinComponent } from './medecin/medecin.component';
+import { UpdateMedComponent } from './medecin/update-med/update-med.component';
+import { InfirmierComponent } from './infirmier/infirmier.component';
+import { UpdateInfComponent } from './infirmier/update-inf/update-inf.component';
+import { RadiologueComponent } from './radiologue/radiologue.component';
+import { UpdateRadioComponent } from './radiologue/update-radio/update-radio.component';
+import { BilologisteComponent } from './bilologiste/bilologiste.component';
+import { UpdateBioComponent } from './bilologiste/update-bio/update-bio.component';
 
 
 @NgModule({
@@ -18,6 +26,14 @@ import { UpdatePComponent } from './reception/update-p/update-p.component';
     AuthComponent,
     ReceptionComponent,
     UpdatePComponent,
+    MedecinComponent,
+    UpdateMedComponent,
+    InfirmierComponent,
+    UpdateInfComponent,
+    RadiologueComponent,
+    UpdateRadioComponent,
+    BilologisteComponent,
+    UpdateBioComponent,
 
   ],
   imports: [
