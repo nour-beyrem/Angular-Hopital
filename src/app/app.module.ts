@@ -18,6 +18,9 @@ import { RadiologueComponent } from './radiologue/radiologue.component';
 import { UpdateRadioComponent } from './radiologue/update-radio/update-radio.component';
 import { BilologisteComponent } from './bilologiste/bilologiste.component';
 import { UpdateBioComponent } from './bilologiste/update-bio/update-bio.component';
+import { PharmacienComponent } from './pharmacien/pharmacien.component';
+import { UpdateMedicamentComponent } from './pharmacien/update-medicament/update-medicament.component';
+import { ChefServiceComponent } from './chef-service/chef-service.component';
 
 
 @NgModule({
@@ -34,6 +37,9 @@ import { UpdateBioComponent } from './bilologiste/update-bio/update-bio.componen
     UpdateRadioComponent,
     BilologisteComponent,
     UpdateBioComponent,
+    PharmacienComponent,
+    UpdateMedicamentComponent,
+    ChefServiceComponent,
 
   ],
   imports: [

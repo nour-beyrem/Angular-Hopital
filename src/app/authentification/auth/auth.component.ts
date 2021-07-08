@@ -71,6 +71,10 @@ export class AuthComponent implements OnInit {
           this.router.navigate(['radiologue']);}
      else if(data.user.role=="biologiste" ){
             this.router.navigate(['biologiste']);}
+      else if(data.user.role=="pharmacien" ){
+              this.router.navigate(['pharmacien']);}
+      else if(data.user.role=="chefService" ){
+                this.router.navigate(['chefService']);}
   
   }
 
