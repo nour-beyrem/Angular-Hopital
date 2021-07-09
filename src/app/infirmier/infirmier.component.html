@@ -62,7 +62,8 @@
                     <th>{{patient.natureUrgence}}</th>
                     <th>{{patient.medecin.prenom }} {{patient.medecin.nom}}</th>
                     <th>
-                      <button type="button" class="btn btn-outline-secondary" (click)="deletePatient(patient.id)"> delete</button>
+                      <button   type="button" class="btn btn-outline-secondary" [routerLink]="['/updateInfirmier',patient.id]"> update</button>
+                     
                   </th>
                    
                 </tr>

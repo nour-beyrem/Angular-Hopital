@@ -21,6 +21,7 @@ import { UpdateBioComponent } from './bilologiste/update-bio/update-bio.componen
 import { PharmacienComponent } from './pharmacien/pharmacien.component';
 import { UpdateMedicamentComponent } from './pharmacien/update-medicament/update-medicament.component';
 import { ChefServiceComponent } from './chef-service/chef-service.component';
+import { UpdatePersonelComponent } from './chef-service/update-personel/update-personel.component';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import { ChefServiceComponent } from './chef-service/chef-service.component';
     PharmacienComponent,
     UpdateMedicamentComponent,
     ChefServiceComponent,
+    UpdatePersonelComponent,
 
   ],
   imports: [

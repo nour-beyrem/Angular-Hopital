@@ -4,6 +4,8 @@ import { AuthComponent } from './authentification/auth/auth.component';
 import { BilologisteComponent } from './bilologiste/bilologiste.component';
 import { UpdateBioComponent } from './bilologiste/update-bio/update-bio.component';
 import { ChefServiceComponent } from './chef-service/chef-service.component';
+
+import { UpdatePersonelComponent } from './chef-service/update-personel/update-personel.component';
 import { InfirmierComponent } from './infirmier/infirmier.component';
 import { UpdateInfComponent } from './infirmier/update-inf/update-inf.component';
 import { MedecinComponent } from './medecin/medecin.component';
@@ -32,7 +34,7 @@ const routes: Routes = [
   {path: 'pharmacien', component: PharmacienComponent},
   {path:'updateMedicament/:id',component:UpdateMedicamentComponent},
   {path: 'chefService', component: ChefServiceComponent},
-  
+  {path:'updatePersonel/:id',component:UpdatePersonelComponent},
 ];
 
 @NgModule({

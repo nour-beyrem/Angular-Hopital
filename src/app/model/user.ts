@@ -19,6 +19,7 @@ export class USER {
 
 
       username: string="";
+      image: string="";
 
 
       email: string="";
