@@ -22,6 +22,7 @@ import { PharmacienComponent } from './pharmacien/pharmacien.component';
 import { UpdateMedicamentComponent } from './pharmacien/update-medicament/update-medicament.component';
 import { ChefServiceComponent } from './chef-service/chef-service.component';
 import { UpdatePersonelComponent } from './chef-service/update-personel/update-personel.component';
+import { ErrorComponent } from './error/error.component';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { UpdatePersonelComponent } from './chef-service/update-personel/update-p
     UpdateMedicamentComponent,
     ChefServiceComponent,
     UpdatePersonelComponent,
+    ErrorComponent,
 
   ],
   imports: [
